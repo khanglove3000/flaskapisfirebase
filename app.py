@@ -9,7 +9,7 @@ app = Flask(__name__)
 cred = credentials.Certificate('key.json')
 default_app = initialize_app(cred)
 db = firestore.client()
-todo_ref = db.collection('nguyen')
+todo_ref = db.collection('khang')
 
 @app.route('/')
 def index():
@@ -21,7 +21,7 @@ def create():
     try:
         db = firestore.client()
         # [START quickstart_add_data_one]
-        doc_ref = db.collection(u'nguyen').document(u'nguyen')
+        doc_ref = db.collection(u'khang').document(u'khang')
         #pdb.set_trace()
    
         doc_ref.set({
@@ -64,7 +64,7 @@ def update():
         # pdb.set_trace()
         # B5: Server edit
         # get record co ma so = input
-        doc_ref = db.collection(u'nguyen').document('John')
+        doc_ref = db.collection(u'khang').document('John')
         #pdb.set_trace()
 
         if doc_ref is not None:
